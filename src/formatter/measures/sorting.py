@@ -14,7 +14,7 @@ def extract_measures(content: str) -> List[str]:
 
 def sort_measures(measures: List[str]) -> List[str]:
 
-    measures.sort(key=lambda x: re_search(r"measure\s+([^=]+)", x).group(1).lower())
+    measures.sort(key=lambda x: re_search(r"measure\s+([^=]+)", x).group(1).lower())  # type: ignore
     return measures
 
 
