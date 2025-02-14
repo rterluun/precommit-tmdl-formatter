@@ -1,0 +1,7 @@
+-   id: tmdl_formatter
+    name: tmdl_formatter
+    description: 'A hook to format tmdl files'
+    entry: tmdl_formatter
+    language: python
+    types: [python]
+    require_serial: true
