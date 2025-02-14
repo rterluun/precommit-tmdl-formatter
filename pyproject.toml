@@ -5,7 +5,7 @@ description = ""
 authors = ["Robert ter Luun <rterluun@ilionx.com>"]
 readme = "README.md"
 packages = [
-  { include = "formatter", from = "src" },
+  { include = "tmdl_formatter", from = "src" },
 ]
 
 [tool.poetry.dependencies]
