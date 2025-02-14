@@ -37,3 +37,6 @@ count = true
 
 [tool.mypy]
 exclude = ["^noxfile\\.py$", "^tests/conftest.py$"]
+
+[tool.poetry.scripts]
+tmdl_formatter = "tmdl_formatter.__main__:main"
