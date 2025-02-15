@@ -1,4 +1,10 @@
-# precommit-tmdl-formatter
+# Tabular Model Definition Language (TMDL) Formatter
+![GitHub Actions](https://github.com/rterluun/precommit-tmdl-formatter/actions/workflows/main.yml/badge.svg)
+
+## 
+This is a pre-commit hook that formats Tabular Model Definition Language (TMDL) files.
+
+
 ```yaml
 ---
 repos:
