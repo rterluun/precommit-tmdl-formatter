@@ -5,7 +5,7 @@ description = ""
 authors = ["Robert ter Luun <rterluun@ilionx.com>"]
 readme = "README.md"
 packages = [
-  { include = "tmdl_formatter", from = "src" },
+  { include = "tmdl_format_measures", from = "src" },
 ]
 
 [tool.poetry.dependencies]
@@ -39,4 +39,4 @@ count = true
 exclude = ["^noxfile\\.py$", "^tests/conftest.py$"]
 
 [tool.poetry.scripts]
-tmdl_formatter = "tmdl_formatter.__main__:main"
+tmdl_format_measures = "tmdl_format_measures.__main__:main"

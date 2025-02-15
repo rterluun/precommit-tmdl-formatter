@@ -1,10 +1,6 @@
 import argparse
 
-from tmdl_formatter.measures.sorting import (
-    extract_measures,
-    replace_measures,
-    sort_measures,
-)
+from src.tmdl_format_measures.sorting import extract_measures, replace_measures, sort_measures
 
 
 def main():
