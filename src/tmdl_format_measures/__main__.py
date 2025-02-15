@@ -1,6 +1,6 @@
 import argparse
 
-from src.tmdl_format_measures.sorting import extract_measures, replace_measures, sort_measures
+from tmdl_format_measures.sorting import extract_measures, replace_measures, sort_measures
 
 
 def main():
