@@ -3,5 +3,5 @@
     description: 'A hook to format tmdl files'
     entry: tmdl_formatter
     language: python
-    types: [python]
+    files: \.tmdl$
     require_serial: true
