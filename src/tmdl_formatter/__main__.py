@@ -9,21 +9,26 @@ def main():
     args = parser.parse_args()
 
     for filename in args.filenames:
-        with open(filename, "r", encoding="utf-8") as file:
-            content = file.read()
 
-        # Extract measures from the file
-        measures = extract_measures(content=content)
+        try:
+            with open(filename, "r", encoding="utf-8") as file:
+                content = file.read()
 
-        # Sort the measures
-        sorted_measures = sort_measures(measures=measures)
+            # Extract measures from the file
+            measures = extract_measures(content=content)
 
-        # Replace the measures in the file
-        new_content = replace_measures(content=content, measures=sorted_measures)
+            # Sort the measures
+            sorted_measures = sort_measures(measures=measures)
 
-        # Write the updated content back to the file
-        with open(filename, "w", encoding="utf-8") as file:
-            file.write(new_content)
+            # Replace the measures in the file
+            new_content = replace_measures(content=content, measures=sorted_measures)
+
+            # Write the updated content back to the file
+            with open(filename, "w", encoding="utf-8") as file:
+                file.write(new_content)
+
+        except FileNotFoundError as e:
+            print(f"Error processing file '{filename}': {e}")
 
 
 if __name__ == "__main__":
