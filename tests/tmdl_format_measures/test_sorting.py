@@ -1,6 +1,6 @@
 from typing import List
 
-from src.tmdl_formatter.measures.sorting import (
+from src.tmdl_format_measures.sorting import (
     extract_measures,
     replace_measures,
     sort_measures,
