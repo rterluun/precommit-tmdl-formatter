@@ -3,7 +3,10 @@ from re import compile as re_compile
 from re import search as re_search
 from typing import List
 
-MEASURE_REGEX = re_compile(r"(\s+measure\s.*?lineageTag: .+?\n)", DOTALL)
+MEASURE_REGEX = re_compile(
+    r"(\s+measure\s.*?lineageTag: .+?(?:\n\s*annotation PBI_FormatHint = .+?)?\n)",
+    DOTALL,
+)
 
 
 def extract_measures(content: str) -> List[str]:
