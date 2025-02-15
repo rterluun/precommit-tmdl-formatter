@@ -1,10 +1,6 @@
 import argparse
 
-from tmdl_formatter.measures.sorting import (
-    extract_measures,
-    replace_measures,
-    sort_measures,
-)
+from tmdl_formatter.measures.sorting import extract_measures, replace_measures, sort_measures
 
 
 def main():
@@ -12,22 +8,24 @@ def main():
     parser.add_argument("filenames", nargs="*")
     args = parser.parse_args()
 
-    for filename in args.filenames:
-        with open(filename, "r") as file:
-            content = file.read()
+    print(args)
 
-        # Extract measures from the file
-        measures = extract_measures(content=content)
+    # for filename in args.filenames:
+    #     with open(filename, "r") as file:
+    #         content = file.read()
 
-        # Sort the measures
-        sorted_measures = sort_measures(measures=measures)
+    #     # Extract measures from the file
+    #     measures = extract_measures(content=content)
 
-        # Replace the measures in the file
-        new_content = replace_measures(content=content, measures=sorted_measures)
+    #     # Sort the measures
+    #     sorted_measures = sort_measures(measures=measures)
 
-        # Write the updated content back to the file
-        with open(filename, "w") as file:
-            file.write(new_content)
+    #     # Replace the measures in the file
+    #     new_content = replace_measures(content=content, measures=sorted_measures)
+
+    #     # Write the updated content back to the file
+    #     with open(filename, "w") as file:
+    #         file.write(new_content)
 
 
 if __name__ == "__main__":
