@@ -1,8 +1,9 @@
 # precommit-tmdl-formatter
 ```yaml
+---
+repos:
   - repo: https://github.com/rterluun/precommit-tmdl-formatter
-    rev: v0.1.0
+    rev: master
     hooks:
       - id: tmdl_formatter
-        files: "_measures\\.tmdl$"
 ```
