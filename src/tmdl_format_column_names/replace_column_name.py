@@ -10,9 +10,7 @@ def rename_columns(
 
     def replace(match):
         prefix = match.group(1)
-        new_column_name = (
-            quotechar + match.group(2).strip("'").lower().capitalize() + quotechar
-        )
-        return f"{prefix}{new_column_name}"
+        new_column_name = match.group(2).strip("'").lower().capitalize()
+        return f"{prefix}{quotechar}{new_column_name}{quotechar}"
 
     return pattern.sub(replace, content)
