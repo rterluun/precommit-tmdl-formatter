@@ -5,3 +5,10 @@
     language: python
     files: \.tmdl$
     require_serial: true
+-   id: tmdl_column_names
+    name: tmdl_column_names
+    description: 'A hook to format tmdl files'
+    entry: tmdl_column_names
+    language: python
+    files: \.tmdl$
+    require_serial: true

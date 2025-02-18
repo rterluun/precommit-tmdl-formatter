@@ -35,6 +35,26 @@ table _measures
         lineageTag: 65e1c794-4323-4801-b404-a320bf7f5abb
     """
 
+CAPITALIZED_COLUMN_NAMES = """
+table 'my_table'
+	lineageTag: e4a415f7-c1f5-45cb-928b-1070ad5686ae
+
+	column Street name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d47-a01a-d27cd156ef01
+		sourceColumn: street_name
+
+	column City name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d48-a01a-d27cd156ef01
+		sourceColumn: city_name
+
+	column Area name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d49-a01a-d27cd156ef01
+		sourceColumn: area_name
+    """
+
 
 @pytest.fixture
 def measures_in_string():
@@ -93,3 +113,26 @@ def sorted_measures_in_list():
         "\n    measure Measure d = [field1]-[field2]\n        formatString: #,0\n        displayFolder: Folder1\\Folder2\n        lineageTag: 65e1c794-4323-4801-b404-a320bf7f5abb\n",
         "\n    measure 'Measure e' = [field1]-[field2]\n        formatString: #,0\n        displayFolder: Folder1\\Folder2\n        lineageTag: 65e1c794-4323-4801-b404-a320bf7f5abb\n",
     ]
+
+
+@pytest.fixture
+def columns_in_string():
+    return """
+table 'my_table'
+	lineageTag: e4a415f7-c1f5-45cb-928b-1070ad5686ae
+
+	column street name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d47-a01a-d27cd156ef01
+		sourceColumn: street_name
+
+	column 'city name'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d48-a01a-d27cd156ef01
+		sourceColumn: city_name
+
+	column AREA name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d49-a01a-d27cd156ef01
+		sourceColumn: area_name
+    """

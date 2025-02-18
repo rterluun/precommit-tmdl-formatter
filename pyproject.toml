@@ -1,11 +1,12 @@
 [tool.poetry]
 name = "precommit-tmdl-formatter"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Robert ter Luun <rterluun@ilionx.com>"]
 readme = "README.md"
 packages = [
   { include = "tmdl_format_measures", from = "src" },
+  { include = "tmdl_column_names", from = "src" },
 ]
 
 [tool.poetry.dependencies]
@@ -40,3 +41,4 @@ exclude = ["^noxfile\\.py$", "^tests/conftest.py$"]
 
 [tool.poetry.scripts]
 tmdl_format_measures = "tmdl_format_measures.__main__:main"
+tmdl_column_names = "tmdl_column_names.__main__:main"
