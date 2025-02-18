@@ -13,6 +13,12 @@ _precommit-tmdl-formatter_ can be installed using pip. It requires Python 3.11 o
 pip install git+https://github.com/rterluun/precommit-tmdl-formatter
 ```
 
+If you want to install a specific version, you can specify the version tag:
+
+```bash
+pip install git+https://github.com/rterluun/precommit-tmdl-formatter@v0.2.0-rc1
+```
+
 ### Usage
 Add the following to your `.pre-commit-config.yaml` in the root of your repository:
 
@@ -23,6 +29,8 @@ repos:
     rev: master
     hooks:
       - id: tmdl_format_measures
+      - id: tmdl_format_column_names
+        args: ['--quote-columns --ignore-columns-starting-with=xi_']
 ```
 
 Enable the pre-commit hook by running:
