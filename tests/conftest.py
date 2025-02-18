@@ -39,17 +39,17 @@ CAPITALIZED_COLUMN_NAMES = """
 table 'my_table'
 	lineageTag: e4a415f7-c1f5-45cb-928b-1070ad5686ae
 
-	column Street name
+	column 'Street name'
 		dataType: string
 		lineageTag: 839a64af-d1f7-4d47-a01a-d27cd156ef01
 		sourceColumn: street_name
 
-	column City name
+	column 'City name'
 		dataType: string
 		lineageTag: 839a64af-d1f7-4d48-a01a-d27cd156ef01
 		sourceColumn: city_name
 
-	column Area name
+	column 'Area name'
 		dataType: string
 		lineageTag: 839a64af-d1f7-4d49-a01a-d27cd156ef01
 		sourceColumn: area_name
