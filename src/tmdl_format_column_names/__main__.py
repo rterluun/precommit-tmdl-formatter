@@ -1,6 +1,6 @@
 import argparse
 
-from tmdl_column_names.replace_column_name import rename_columns
+from tmdl_format_column_names.replace_column_name import rename_columns
 
 
 def main():
