@@ -55,6 +55,31 @@ table 'my_table'
 		sourceColumn: area_name
     """
 
+EXCLUDED_COLUMNS_STARTING_WITH_CHARACTER = """
+table 'my_table'
+	lineageTag: e4a415f7-c1f5-45cb-928b-1070ad5686ae
+
+	column '_street name'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d47-a01a-d27cd156ef01
+		sourceColumn: street_name
+
+	column '_street name'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d48-a01a-d27cd156ef01
+		sourceColumn: street_name
+
+    column '_street name'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d49-a01a-d27cd156ef01
+		sourceColumn: street_name
+
+    column 'Street name'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d50-a01a-d27cd156ef01
+		sourceColumn: city_street_namename
+"""
+
 
 @pytest.fixture
 def measures_in_string():
@@ -136,3 +161,31 @@ table 'my_table'
 		lineageTag: 839a64af-d1f7-4d49-a01a-d27cd156ef01
 		sourceColumn: area_name
     """
+
+
+@pytest.fixture
+def columns_starting_with_character_in_string():
+    return """
+table 'my_table'
+	lineageTag: e4a415f7-c1f5-45cb-928b-1070ad5686ae
+
+	column '_street name'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d47-a01a-d27cd156ef01
+		sourceColumn: street_name
+
+	column _street name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d48-a01a-d27cd156ef01
+		sourceColumn: street_name
+
+    column _Street name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d49-a01a-d27cd156ef01
+		sourceColumn: street_name
+
+    column street name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d50-a01a-d27cd156ef01
+		sourceColumn: city_street_namename
+"""

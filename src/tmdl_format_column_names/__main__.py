@@ -8,7 +8,18 @@ def main():
     parser.add_argument("filenames", nargs="*")
     parser.add_argument(
         "--quote-columns",
+        dest="quote_columns",
         action="store_true",
+    )
+    parser.add_argument(
+        "--no-quote-columns",
+        dest="quote_columns",
+        action="store_false",
+    )
+    parser.add_argument(
+        "--ignore-columns-starting-with",
+        dest="ignore_columns_starting_with",
+        default=None,
     )
     args = parser.parse_args()
 
@@ -21,6 +32,7 @@ def main():
             new_content = rename_columns(
                 content=content,
                 quote_columns=args.quote_columns,
+                ignore_columns_starting_with=args.ignore_columns_starting_with,
             )
 
             # Write the updated content back to the file
