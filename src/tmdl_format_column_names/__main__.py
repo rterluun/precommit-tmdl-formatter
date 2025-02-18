@@ -7,9 +7,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filenames", nargs="*")
     parser.add_argument(
-        "--quote-char",
-        default="'",
-        help="Character used for quotes (default: single quote)",
+        "--quote-columns",
+        action="store_true",
     )
     args = parser.parse_args()
 
@@ -21,7 +20,7 @@ def main():
 
             new_content = rename_columns(
                 content=content,
-                quotechar=args.quote_char,
+                quote_columns=args.quote_columns,
             )
 
             # Write the updated content back to the file
