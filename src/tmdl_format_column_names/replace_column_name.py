@@ -1,12 +1,12 @@
 from re import IGNORECASE
 from re import compile as re_compile
-from typing import Optional
+from typing import List, Optional
 
 
 def rename_columns(
     content: str,
     quote_columns: bool = True,
-    ignore_columns_starting_with: Optional[str] = None,
+    ignore_columns_starting_with: Optional[List[str]] = None,
 ) -> str:
     pattern = re_compile(r"(\s+column\s+)'?(.*)", IGNORECASE)
     quotechar = "'" if quote_columns else ""
@@ -15,8 +15,9 @@ def rename_columns(
         prefix = match.group(1)
         new_column_name = match.group(2).strip("'").lower()
 
-        if ignore_columns_starting_with and new_column_name.startswith(
-            ignore_columns_starting_with
+        if ignore_columns_starting_with and any(
+            new_column_name.startswith(prefix)
+            for prefix in ignore_columns_starting_with
         ):
             pass  # Do not capitalize column names that start with the specified string
         else:

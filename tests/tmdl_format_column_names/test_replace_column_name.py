@@ -17,7 +17,7 @@ def test_rename_columns_ignore_columns_starting_with_character(
     assert (
         rename_columns(
             content=columns_starting_with_character_in_string,
-            ignore_columns_starting_with="_",
+            ignore_columns_starting_with=["_", "#_"],
         )
         == EXCLUDED_COLUMNS_STARTING_WITH_CHARACTER
     )

@@ -78,6 +78,11 @@ table 'my_table'
 		dataType: string
 		lineageTag: 839a64af-d1f7-4d50-a01a-d27cd156ef01
 		sourceColumn: city_street_namename
+
+    column '#_street name'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d51-a01a-d27cd156ef01
+		sourceColumn: city_street_namename
 """
 
 
@@ -187,5 +192,10 @@ table 'my_table'
     column street name
 		dataType: string
 		lineageTag: 839a64af-d1f7-4d50-a01a-d27cd156ef01
+		sourceColumn: city_street_namename
+
+    column #_street name
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d51-a01a-d27cd156ef01
 		sourceColumn: city_street_namename
 """
