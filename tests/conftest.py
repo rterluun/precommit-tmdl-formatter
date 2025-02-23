@@ -85,6 +85,31 @@ table 'my_table'
 		sourceColumn: city_street_namename
 """
 
+EXCLUDED_COLUMNS_WITH_PRESERVED_WORDS = """
+table 'my_table'
+	lineageTag: e4a415f7-c1f5-45cb-928b-1070ad5686ae
+
+	column 'VAT percentage'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d47-a01a-d27cd156ef01
+		sourceColumn: vat_percentage
+
+	column 'Percentage VAT in total'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d48-a01a-d27cd156ef01
+		sourceColumn: vat_percentage
+
+	column 'Percentage VAT in total'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d49-a01a-d27cd156ef01
+		sourceColumn: vat_percentage
+
+    column 'Percentage vats in total'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d50-a01a-d27cd156ef01
+		sourceColumn: vat_percentage
+"""
+
 
 @pytest.fixture
 def measures_in_string():
@@ -198,4 +223,32 @@ table 'my_table'
 		dataType: string
 		lineageTag: 839a64af-d1f7-4d51-a01a-d27cd156ef01
 		sourceColumn: city_street_namename
+"""
+
+
+@pytest.fixture
+def columns_with_preserved_words():
+    return """
+table 'my_table'
+	lineageTag: e4a415f7-c1f5-45cb-928b-1070ad5686ae
+
+	column 'VAT percentage'
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d47-a01a-d27cd156ef01
+		sourceColumn: vat_percentage
+
+	column Percentage VAT in total
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d48-a01a-d27cd156ef01
+		sourceColumn: vat_percentage
+
+	column Percentage vat in total
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d49-a01a-d27cd156ef01
+		sourceColumn: vat_percentage
+
+    column Percentage VATS in total
+		dataType: string
+		lineageTag: 839a64af-d1f7-4d50-a01a-d27cd156ef01
+		sourceColumn: vat_percentage
 """
