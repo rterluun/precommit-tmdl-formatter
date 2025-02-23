@@ -17,7 +17,8 @@ def rename_columns(
         new_column_name = match.group(2).strip("'").lower()
 
         if ignore_columns_starting_with and any(
-            new_column_name.startswith(prefix) for prefix in ignore_columns_starting_with
+            new_column_name.startswith(prefix)
+            for prefix in ignore_columns_starting_with
         ):
             pass  # Do not capitalize column names that start with the specified string
         else:
