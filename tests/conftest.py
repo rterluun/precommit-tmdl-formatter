@@ -110,6 +110,20 @@ table 'my_table'
 		sourceColumn: vat_percentage
 """
 
+COLUMN_NAMES_CHANGES_IN_MEASURES = """
+table _measures
+    lineageTag: 06e2dbdd-c3ac-405b-8a81-5aa4912861b3
+
+    measure 'Measure a' =
+			CALCULATE(
+			    COUNTROWS( 'col1' ),
+			    FILTER( 'table', 'my_table'[Street name] = "Main Road" )
+			)
+        formatString: #,0
+        displayFolder: Folder1\Folder2
+        lineageTag: 65e1c794-4323-4801-b808-a320bf7f5abb
+"""
+
 
 @pytest.fixture
 def measures_in_string():
@@ -251,4 +265,21 @@ table 'my_table'
 		dataType: string
 		lineageTag: 839a64af-d1f7-4d50-a01a-d27cd156ef01
 		sourceColumn: vat_percentage
+"""
+
+
+@pytest.fixture
+def measures_with_column_references():
+    return """
+table _measures
+    lineageTag: 06e2dbdd-c3ac-405b-8a81-5aa4912861b3
+
+    measure 'Measure a' =
+			CALCULATE(
+			    COUNTROWS( 'col1' ),
+			    FILTER( 'table', 'my_table'[street name] = "Main Road" )
+			)
+        formatString: #,0
+        displayFolder: Folder1\Folder2
+        lineageTag: 65e1c794-4323-4801-b808-a320bf7f5abb
 """
