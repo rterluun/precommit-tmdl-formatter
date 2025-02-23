@@ -21,6 +21,12 @@ def main():
         dest="ignore_columns_starting_with",
         default=None,
     )
+
+    parser.add_argument(
+        "--preserved-words",
+        dest="preserved_words",
+        default=None,
+    )
     args = parser.parse_args()
 
     for filename in args.filenames:
@@ -33,6 +39,7 @@ def main():
                 content=content,
                 quote_columns=args.quote_columns,
                 ignore_columns_starting_with=args.ignore_columns_starting_with,
+                preserved_words=args.preserved_words,
             )
 
             # Write the updated content back to the file
