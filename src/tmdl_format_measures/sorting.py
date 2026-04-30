@@ -4,7 +4,7 @@ from re import search as re_search
 from typing import List
 
 MEASURE_REGEX = re_compile(
-    r"(\s+measure\s.*?lineageTag: .+?(?:\n\s*annotation PBI_FormatHint = .+?)?\n)",
+    r"((?:\s+///[^\n]*\n)*\s+measure\s.*?lineageTag: .+?(?:\n\s*annotation PBI_FormatHint = .+?)?\n)",
     DOTALL,
 )
 
