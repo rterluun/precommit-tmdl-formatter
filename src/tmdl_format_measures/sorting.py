@@ -16,8 +16,12 @@ def extract_measures(content: str) -> List[str]:
 
 
 def sort_measures(measures: List[str]) -> List[str]:
+    def extract_measure_name(measure: str) -> str:
+        # Extract the measure name, ignoring any preceding comments
+        measure_without_comments = re_search(r"(?:\s+///[^\n]*\n)*\s+measure\s+'?([^=]+)", measure)
+        return measure_without_comments.group(1).lower() if measure_without_comments else ""
 
-    measures.sort(key=lambda x: re_search(r"measure\s+'?([^=]+)", x).group(1).lower())  # type: ignore
+    measures.sort(key=extract_measure_name)
     return measures
 
 
