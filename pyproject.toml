@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "precommit-tmdl-formatter"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Robert ter Luun <rterluun@ilionx.com>"]
 readme = "README.md"
