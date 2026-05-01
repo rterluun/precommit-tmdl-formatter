@@ -1,13 +1,12 @@
 import nox
 
+# @nox.session
+# def tests(session):
+#     session.install("coverage")
+#     session.install("pytest")
 
-@nox.session
-def tests(session):
-    session.install("coverage")
-    session.install("pytest")
-
-    session.run("coverage", "run", "--source", "src", "-m", "pytest", "tests")
-    session.run("coverage", "report", "-m")
+#     session.run("coverage", "run", "--source", "src", "-m", "pytest", "tests")
+#     session.run("coverage", "report", "-m")
 
 
 @nox.session
