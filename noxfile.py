@@ -17,7 +17,6 @@ def lint(session):
     ]["dependencies"]
     session.install(*requirements)
 
-    session.run("black", "--check", ".")
-    session.run("flake8", "--max-line-length", "120", ".")
-    session.run("isort", "--profile", "black", "--check", ".")
-    session.run("mypy", "--ignore-missing-imports", ".")
+    # Install the local python package in editable mode
+    session.install("-e", ".")
+    session.run("pre-commit", "run", "--all-files")
