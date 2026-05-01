@@ -1,19 +1,19 @@
 table _measures
     lineageTag: 06e2dbdd-c3ac-405b-8a81-5aa4912861b3
 
-    measure 'Measure b' = SUM('field1'[Count])
-        formatString: #,0
-        displayFolder: Folder1\Folder2
-        lineageTag: 357ac151-baaf-47c6-92ff-033eeacdeb60
-
-        annotation PBI_FormatHint = {"isGeneralNumber":true}
-
     measure 'Measure a' = [field1]-[field2]
         formatString: #,0
         displayFolder: Folder1\Folder2
         lineageTag: 65e1c794-4323-4801-b808-a320bf7f5abb
 
         annotation PBI_FormatHint = {"isGeneralNumber":false}
+
+    measure 'Measure b' = SUM('field1'[Count])
+        formatString: #,0
+        displayFolder: Folder1\Folder2
+        lineageTag: 357ac151-baaf-47c6-92ff-033eeacdeb60
+
+        annotation PBI_FormatHint = {"isGeneralNumber":true}
 
     measure 'Measure c' = [field1]-[field2]
         formatString: #,0
