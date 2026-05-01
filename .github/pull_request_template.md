@@ -8,4 +8,4 @@ Please ensure the following before submitting your pull request:
 
 ---
 
-Thank you for contributing!
+Thank you for contributing!!
